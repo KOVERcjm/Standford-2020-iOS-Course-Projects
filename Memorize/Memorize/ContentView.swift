@@ -28,6 +28,7 @@ struct ContentView: View {
     var body: some View {
         // A complete way to return a View, which can have some alignments before content
         HStack(content: {
+            // Complete way of 'ForEach' will be `ForEach(0..<4, content: {})`
             ForEach(0..<4) { index in
                 CardView(isFaceUp: true)
             }
