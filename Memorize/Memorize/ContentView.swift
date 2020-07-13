@@ -9,14 +9,14 @@
 import SwiftUI
 
 struct CardView: View {
-    var isFaceUp: Bool
+    var card: MemoryGame<String>.Card
+    
     var body: some View {
-        // A simple way to return a View
         ZStack {
-            if (isFaceUp) {
+            if (card.isFaceUp) {
                 RoundedRectangle(cornerRadius: 10.0).stroke()
                 RoundedRectangle(cornerRadius: 10.0).fill(Color.white)
-                Text("👻")
+                Text(card.content)
             } else {
                 RoundedRectangle(cornerRadius: 10.0).fill()
             }
@@ -25,15 +25,16 @@ struct CardView: View {
 }
 
 struct ContentView: View {
+    var emojiMemoryGame: EmojiMemoryGame
+    
     var body: some View {
-        // A complete way to return a View, which can have some alignments before content
-        HStack(content: {
-            // Complete way of 'ForEach' will be `ForEach(0..<4, content: {})`
-            ForEach(0..<4) { index in
-                CardView(isFaceUp: true)
+        HStack {
+            ForEach(emojiMemoryGame.cards) { card in
+                CardView(card: card).onTapGesture {
+                    self.emojiMemoryGame.choose(card: card)
+                }
             }
-        })
-        // Padding in default size, RECOMMENDED
+        }
         .padding()
         .foregroundColor(Color.orange)
         .font(Font.largeTitle)
@@ -42,6 +43,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(emojiMemoryGame: EmojiMemoryGame())
     }
 }

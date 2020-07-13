@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Memorize
 //
-//  Created by Kover Cheng on 6/7/20.
+//  Created by Kover Cheng on 13/7/20.
 //  Copyright © 2020 Kover Cheng. All rights reserved.
 //
 
