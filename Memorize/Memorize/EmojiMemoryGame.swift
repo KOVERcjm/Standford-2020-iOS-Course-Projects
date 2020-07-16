@@ -8,15 +8,15 @@
 
 import Foundation
 
-class EmojiMemoryGame {
-    private var memoryGame: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
+class EmojiMemoryGame: ObservableObject {
+    // @Published is a property wrapper that will automatically call
+    // objectWillChange.send() as the variable changed.
+    @Published private var memoryGame: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
     
     static func createMemoryGame() -> MemoryGame<String> {
-        // MARK: Extra Credit - Random emojis
         var emojis = ["🕷", "👻", "🎃", "🤡", "🍬", "🍭", "🦃"]
         emojis.shuffle()
         
-        // MARK: Random pairs of cards
         let startNumberOfPairs = Int.random(in: 2...5)
         
         return MemoryGame<String>(numberOfPairsOfCards: startNumberOfPairs) { pairIndex in

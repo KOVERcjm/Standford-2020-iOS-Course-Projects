@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  EmojiMemoryGameView.swift
 //  Standford CS193p Memorize
 //
 //  Created by Kover Cheng on 6/7/20.
@@ -21,13 +21,12 @@ struct CardView: View {
                 RoundedRectangle(cornerRadius: 10.0).fill()
             }
         }
-        // MARK: Aspect Ratio of 2:3
         .aspectRatio(2 / 3, contentMode: .fit)
     }
 }
 
-struct ContentView: View {
-    var emojiMemoryGame: EmojiMemoryGame
+struct EmojiMemoryGameView: View {
+    @ObservedObject var emojiMemoryGame: EmojiMemoryGame
     
     var body: some View {
         HStack {
@@ -45,6 +44,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(emojiMemoryGame: EmojiMemoryGame())
+        EmojiMemoryGameView(emojiMemoryGame: EmojiMemoryGame())
     }
 }

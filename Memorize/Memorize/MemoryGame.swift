@@ -26,11 +26,19 @@ struct MemoryGame<CardContent> {
             cards.append(Card(content: content, id: 2 * pairIndex + 1))
         }
         
-        // MARK: Shuffle the cards
         cards.shuffle()
     }
     
-    func choose(card: Card) {
+    mutating func choose(card: Card) {
         print("card chosen: \(card)")
+        
+        let chosenIndex = index(of: card)!      // TODO: Forced unwrapping
+        cards[chosenIndex].isFaceUp = !cards[chosenIndex].isFaceUp
+    }
+    
+    func index(of card: Card) -> Int? {
+        cards.firstIndex() {
+            target in card.id == target.id
+        }
     }
 }
