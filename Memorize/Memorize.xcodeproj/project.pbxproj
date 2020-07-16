@@ -62,13 +62,13 @@
 			children = (
 				8CE9345724BC5357000F7B8B /* AppDelegate.swift */,
 				8CE9345924BC5357000F7B8B /* SceneDelegate.swift */,
-				8CE9345B24BC5357000F7B8B /* ContentView.swift */,
 				8CE9345D24BC5358000F7B8B /* Assets.xcassets */,
 				8CE9346224BC5358000F7B8B /* LaunchScreen.storyboard */,
 				8CE9346524BC5358000F7B8B /* Info.plist */,
 				8CE9345F24BC5358000F7B8B /* Preview Content */,
-				8CAD9DD224BC5537005827F2 /* EmojiMemoryGame.swift */,
 				8CAD9DD424BC556A005827F2 /* MemoryGame.swift */,
+				8CE9345B24BC5357000F7B8B /* ContentView.swift */,
+				8CAD9DD224BC5537005827F2 /* EmojiMemoryGame.swift */,
 			);
 			path = Memorize;
 			sourceTree = "<group>";
@@ -304,7 +304,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Cheng.Kover.Memorize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -324,7 +324,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Cheng.Kover.Memorize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

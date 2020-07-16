@@ -21,6 +21,8 @@ struct CardView: View {
                 RoundedRectangle(cornerRadius: 10.0).fill()
             }
         }
+        // MARK: Aspect Ratio of 2:3
+        .aspectRatio(2 / 3, contentMode: .fit)
     }
 }
 
@@ -37,7 +39,7 @@ struct ContentView: View {
         }
         .padding()
         .foregroundColor(Color.orange)
-        .font(Font.largeTitle)
+        .font(emojiMemoryGame.cards.count == 5 ? Font.title : Font.largeTitle)
     }
 }
 
